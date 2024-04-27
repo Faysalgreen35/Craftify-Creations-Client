@@ -34,7 +34,7 @@ const Header = () => {
 
     </>
     return (
-        <div className="navbar text-orange-500   dark:bg-gray-800 dark:text-white   bg-gray-800   p-4">
+        <div className="navbar text-yellow-700 text-neon-lime mt-12   dark:bg-gray-800 dark:text-white   bg-gray-300 font-bold font-playfair   p-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -54,7 +54,7 @@ const Header = () => {
                     {navlinks}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end lg:mr-4">
 
                 {
                     user ?

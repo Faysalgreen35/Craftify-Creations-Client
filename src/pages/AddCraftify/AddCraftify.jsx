@@ -2,6 +2,7 @@
 import { useContext } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../providers/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 const AddCraftify = () => {
 
     const {user}= useContext(AuthContext);
@@ -9,7 +10,7 @@ const AddCraftify = () => {
     const handleAddCraftify = event => {
         event.preventDefault();
         const form = event.target;
-        const name= form.name.value;
+        const item_name= form.item_name.value;
         const subcategory_Name = form.subcategory_Name.value;
         const description = form.description.value;
         const price = form.price.value;
@@ -21,7 +22,7 @@ const AddCraftify = () => {
         const email = user.email;
         const user_name = user.displayName;
         
-        const newCoffee = { name, subcategory_Name, description, price, rating, customization, photo, processing_time, stockStatus, email, user_name };
+        const newCoffee = { item_name, subcategory_Name, description, price, rating, customization, photo, processing_time, stockStatus, email, user_name };
         console.log(newCoffee);
 
         // send data to the server 
@@ -51,6 +52,9 @@ const AddCraftify = () => {
 
     return (
         <div className="bg-[#F4F3F0] p-20  text-pruple-500   dark:bg-gray-800 dark:text-white    ">
+            <Helmet>
+                <title>Craftify Creations || Add Craftify Page</title>
+            </Helmet>
             <h1 className="text-3xl font-extrabold">Add Craftify</h1>
 
             <form onSubmit={handleAddCraftify} >
@@ -63,7 +67,7 @@ const AddCraftify = () => {
                         <div className="join">
 
 
-                            <input className="input input-bordered join-item w-full" name="name" type="text" placeholder="  Name" />
+                            <input className="input input-bordered join-item w-full" name="item_name" type="text" placeholder="  item_name" />
 
                         </div>
                     </div>

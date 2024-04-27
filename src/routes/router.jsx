@@ -6,7 +6,8 @@ import ErrorPage from "../layouts/ErrorPage";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import AddCraftify from "../pages/AddCraftify/AddCraftify";
-import PrivateRoutes from "./PrivateRoutes";
+import PrivateRoutes from "./PrivateRoutes"; 
+import CraftifyCardDetails from "../pages/Home/CraftifyCardDetails";
 
  
 
@@ -18,7 +19,8 @@ import PrivateRoutes from "./PrivateRoutes";
         children:[
             {
                 path: '/',
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader: () => fetch('http://localhost:5000/craftify')
 
             }, 
             {
@@ -33,6 +35,11 @@ import PrivateRoutes from "./PrivateRoutes";
                 path:'/add-item',
                 element: 
                 <PrivateRoutes> <AddCraftify></AddCraftify></PrivateRoutes>
+            },
+            {
+                path:'/craftify/:id',
+                element: <CraftifyCardDetails></CraftifyCardDetails> ,
+                loader: () => fetch('http://localhost:5000/craftify'),
             },
 
         ]
