@@ -30,25 +30,25 @@ const AllArtCraftItems = () => {
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300 bg-white dark:bg-gray-800">
                     <thead>
-                        <tr className="bg-gray-400 dark:bg-gray-700">
-                            <th className="px-4 py-2 border border-gray-300 dark:border-gray-600">Item Name</th>
+                        <tr className="bg-gray-400 dark:bg-gray-700 text-[#e6bf55] ">
+                            <th className="px-4 py-2 border border-gray-300 dark:border-gray-600">Item Image</th>
                             <th className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">Subcategory</th>
-                            <th className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">Email</th>
-                            <th className="px-4 py-2 border border-gray-300 dark:border-gray-600">User</th>
+                            <th className="px-4 py-2 border border-gray-300 dark:border-gray-600 ">Email</th>
+                            <th className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">User</th>
                             <th className="px-4 py-2 border border-gray-300 dark:border-gray-600">View Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         { craftify.map(cra => (
                             <tr key={cra._id} className="bg-gray-100 dark:bg-gray-600">
-                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600">{cra.item_name}</td>
+                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600"><img src={cra.photo} className="w-20 h-20" alt="" /></td>
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">{cra.subcategory_Name}</td>
-                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">{cra.email}</td>
-                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600">{cra.user_name}</td>
+                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600  ">{cra.email}</td>
+                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">{cra.user_name}</td>
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600">
 
                                     <Link to={`/craftify/${cra._id}`} className="block mt-4">
-                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-full">
+                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 w-full rounded-full">
                                             View Details
                                         </button>
                                     </Link>

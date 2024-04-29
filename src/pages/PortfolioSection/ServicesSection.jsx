@@ -8,7 +8,7 @@ const ServicesSection = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                     <div className="portfolio-card">
                      <img src="https://wordpress.templatetrip.com/WCMTM01/WCMTM029_kraftiart/wp-content/uploads/2023/09/portfolio-04.jpg" alt="Portfolio 04" className="w-full transition-transform duration-300 transform hover:scale-110" />
-                        <h3 className="text-xl font-bold -mt-4">Custom Artwork</h3>
+                        <h3 className="text-xl font-bold mt-4">Custom Artwork</h3>
                         <p className="text-gray-700">The process of creating custom art</p>
                     </div>
                     <div className="portfolio-card">
