@@ -1,4 +1,4 @@
- 
+
 
 import { Link, NavLink } from "react-router-dom";
 // import Logo from '../../../src/assets/house.png'
@@ -54,7 +54,7 @@ const Header = () => {
         // <div className="navbar text-yellow-700 text-neon-lime mt-12  my-24  dark:bg-gray-800 dark:text-white   bg-orange-400  py-16 font-bold font-playfair   p-4">
 
         <div className={`navbar text-yellow-700 text-neon-lime   dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
-        
+
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -88,7 +88,7 @@ const Header = () => {
                                 </div>
                                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52  ">
                                     <li>
-                                         
+
                                     </li>
                                     <li><a className=" text-yellow-500">Name: {user.displayName}</a></li>
                                     <li><a className=" text-yellow-500"> Email: {user.email}</a></li>
