@@ -62,6 +62,20 @@ const Home = () => {
             <Helmet>
                 <title>Craftify Creations || Home Page</title>
             </Helmet>
+            {/* Professional tooltips */}
+            <div className="font-bold text-center text-3xl flex justify-between">
+           <a id="not-clickable">◕‿‿◕</a>
+           <Tooltip anchorSelect="#not-clickable" content="This button is not clickable">
+                <button className="tooltip-btn">You can not click me :(</button>
+            </Tooltip>
+            <a className="my-anchor-element">◕‿‿◕</a>
+            <Tooltip anchorSelect=".my-anchor-element" content="Hello world!">
+                <a className="my-anchor-element">◕‿‿◕</a>
+            </Tooltip>
+            <Tooltip anchorSelect="#clickable" content="Click me!" clickable>
+                <button className="tooltip-btn">You can click me!</button>
+            </Tooltip>
+           </div>
             <div className="text-center font-playfair font-bold  text-yellow-700 " style={{ fontSize: '2rem' }}>
                 <Typewriter
                     words={['Hello!', 'Welcome to Craftify Creations!', 'Explore our amazing crafts!']}
