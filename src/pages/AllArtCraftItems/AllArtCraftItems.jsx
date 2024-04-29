@@ -30,7 +30,7 @@ const AllArtCraftItems = () => {
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300 bg-white dark:bg-gray-800">
                     <thead>
-                        <tr className="bg-gray-400 dark:bg-gray-700 text-[#e6bf55] ">
+                        <tr className="bg-gray-600 dark:bg-gray-700 text-[#e6bf55] ">
                             <th className="px-4 py-2 border border-gray-300 dark:border-gray-600">Item Image</th>
                             <th className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">Subcategory</th>
                             <th className="px-4 py-2 border border-gray-300 dark:border-gray-600 ">Email</th>
@@ -48,7 +48,7 @@ const AllArtCraftItems = () => {
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600">
 
                                     <Link to={`/craftify/${cra._id}`} className="block mt-4">
-                                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-4 w-full rounded-full">
+                                        <button className="bg-[#e6bf55] hover:bg-blue-700 text-white font-semibold py-2 px-4 w-full rounded-full">
                                             View Details
                                         </button>
                                     </Link>
