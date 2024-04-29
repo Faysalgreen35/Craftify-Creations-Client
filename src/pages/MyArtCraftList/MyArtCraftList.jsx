@@ -84,12 +84,12 @@ const MyArtCraftList = () => {
 
 
     return (
-        <div className="p-8  text-yellow-800 text-neon-lime mt-12   dark:bg-gray-800 dark:text-white    font-bold font-playfair">
+        <div className="p-8  text-yellow-800 text-neon-lime mt-12   dark:bg-gray-800 dark:text-white font-bold font-playfair">
             <h1 className="text-4xl font-bold mb-8">My Art & Craft List</h1>
             {/* Dropdown for filter */}
             <div className="mb-8 text-center">
-                <label htmlFor="customizationFilter" className="block text-sm font-medium text-gray-700 mb-2   text-neon-lime mt-12   dark:bg-gray-800 dark:text-white     font-playfair">Filter by Customization:</label>
-                <select id="customizationFilter" value={filter} onChange={handleFilterChange} className="border border-gray-300 rounded px-4 py-2  text-neon-lime mt-12   dark:bg-gray-800 dark:text-white    font-bold font-playfair  ">
+                <label htmlFor="customizationFilter" className="block  font-medium text-gray-700 mb-2   text-neon-lime    dark:bg-gray-800 dark:text-white    text-4xl font-playfair">Filter by Customization:</label>
+                <select id="customizationFilter" value={filter} onChange={handleFilterChange} className="border border-gray-300 rounded px-4 py-2  text-neon-lime     dark:bg-gray-800 dark:text-white    font-bold font-playfair  ">
                     <option value="all">All</option>
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
@@ -99,7 +99,7 @@ const MyArtCraftList = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8  text-yellow-700 text-neon-lime mt-12   dark:bg-gray-800 dark:text-white     font-bold font-playfair">
                 {filteredArtsCrafts.map(art => (
-                    <div key={art.id} className="relative border border-gray-300 rounded">
+                    <div key={art.id} className="relative border border-gray-300 rounded bg-gray-300">
                         <img src={art.photo} alt={art.item_name} className="w-full h-48 object-cover rounded-t" />
                         <div className="absolute top-0 right-0 opacity-80 font-extrabold text-2xl  bg-gray-100 text-orange-900 px-10 py-2 rounded-bl">
                             ${art.price}

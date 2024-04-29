@@ -1,6 +1,8 @@
+ 
+
 import { Link, NavLink } from "react-router-dom";
 // import Logo from '../../../src/assets/house.png'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Header = () => {
@@ -8,6 +10,21 @@ const Header = () => {
     console.log('wait for usersss',)
 
     const [darkMode, setDarkMode] = useState(false);
+
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            if (scrollTop > 100) { // Adjust the scroll threshold as needed
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const handleThemeToggle = () => {
         setDarkMode(prevMode => !prevMode);
@@ -34,23 +51,26 @@ const Header = () => {
 
     </>
     return (
-        <div className="navbar text-yellow-700 text-neon-lime mt-12  my-24  dark:bg-gray-800 dark:text-white   bg-orange-100 font-bold font-playfair   p-4">
+        // <div className="navbar text-yellow-700 text-neon-lime mt-12  my-24  dark:bg-gray-800 dark:text-white   bg-orange-400  py-16 font-bold font-playfair   p-4">
+
+        <div className={`navbar text-yellow-700 text-neon-lime   dark:bg-gray-800 dark:text-white bg-orange-400 py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
+        
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm text-4xl dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         {navlinks}
                     </ul>
                 </div>
                 <div className="flex">
                     {/* <img className="w-10" src={Logo} alt="" /> */}
-                    <a className="btn btn-ghost text-4xl font-jacquard hidden lg:block"> Craftify Creations</a>
+                    <a className="btn btn-ghost lg:text-4xl font-jacquard   lg:block"> Craftify Creations</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal   px-1">
                     {navlinks}
                 </ul>
             </div>
