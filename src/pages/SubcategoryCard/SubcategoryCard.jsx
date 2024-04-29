@@ -4,7 +4,7 @@ const SubcategoryCard = ({ singleCard }) => {
     const { subcategory_Name, photo, description } = singleCard;
 
     return (
-        <div className="mx-auto ">
+        <div className="mx-auto py-4 ">
 
             <Link to={`category/${subcategory_Name}`}>
                 <div className="relative w-48 h-48 overflow-hidden rounded-full shadow-lg transition-transform duration-300 transform hover:scale-105">
