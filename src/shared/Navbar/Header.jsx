@@ -27,14 +27,14 @@ const Header = () => {
         {
             user && <>
                 <li><NavLink to="/add-item">   Add Craft Item</NavLink></li>
-                <li><NavLink to="/my-list"> My Art & Craft List</NavLink></li>
+                <li><NavLink to="/my-cart"> My Art & Craft List</NavLink></li>
 
             </>
         }
 
     </>
     return (
-        <div className="navbar text-yellow-700 text-neon-lime mt-12   dark:bg-gray-800 dark:text-white   bg-gray-300 font-bold font-playfair   p-4">
+        <div className="navbar text-yellow-700 text-neon-lime mt-12  my-24  dark:bg-gray-800 dark:text-white   bg-orange-100 font-bold font-playfair   p-4">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +46,7 @@ const Header = () => {
                 </div>
                 <div className="flex">
                     {/* <img className="w-10" src={Logo} alt="" /> */}
-                    <a className="btn btn-ghost text-4xl font-jacquard"> Craftify Creations</a>
+                    <a className="btn btn-ghost text-4xl font-jacquard hidden lg:block"> Craftify Creations</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -68,15 +68,10 @@ const Header = () => {
                                 </div>
                                 <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52  ">
                                     <li>
-                                        <a href="/userprofile" className="justify-between text-green-500">
-                                            User Profile
-
-
-                                            <span className="badge">New</span>
-                                        </a>
+                                         
                                     </li>
-                                    <li><a>Name: {user.displayName}</a></li>
-                                    <li><a> Email: {user.email}</a></li>
+                                    <li><a className=" text-yellow-500">Name: {user.displayName}</a></li>
+                                    <li><a className=" text-yellow-500"> Email: {user.email}</a></li>
 
                                     <button onClick={handleSigOut} className="btn btn-primary"> Sign Out</button>
                                 </ul>

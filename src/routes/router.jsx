@@ -8,6 +8,12 @@ import Register from "../pages/Register/Register";
 import AddCraftify from "../pages/AddCraftify/AddCraftify";
 import PrivateRoutes from "./PrivateRoutes"; 
 import CraftifyCardDetails from "../pages/Home/CraftifyCardDetails";
+import MyArtCraftList from "../pages/MyArtCraftList/MyArtCraftList";
+import UpdateCraftify from "../pages/UpdateCraftify/UpdateCraftify";
+import AllArtCraftItems from "../pages/AllArtCraftItems/AllArtCraftItems";
+import CategoryIn from "../pages/CategoryIn/CategoryIn";
+import Subcategories from "../pages/Subcategories/Subcategories";
+// import Subcategories from "../pages/Subcategories/Subcategories";
 
  
 
@@ -20,9 +26,11 @@ import CraftifyCardDetails from "../pages/Home/CraftifyCardDetails";
             {
                 path: '/',
                 element:<Home></Home>,
-                loader: () => fetch('http://localhost:5000/craftify')
-
-            }, 
+                loader: () => Promise.all([
+                    fetch('https://craftify-creations-server.vercel.app/craftify'),
+                    fetch('https://craftify-creations-server.vercel.app/category')
+                ]).then(responses => Promise.all(responses.map(response => response.json())))
+            },
             {
                 path:'/login',
                 element: <Login></Login>
@@ -38,11 +46,36 @@ import CraftifyCardDetails from "../pages/Home/CraftifyCardDetails";
             },
             {
                 path:'/craftify/:id',
-                element: <CraftifyCardDetails></CraftifyCardDetails> ,
-                loader: () => fetch('http://localhost:5000/craftify'),
+                element: <PrivateRoutes><CraftifyCardDetails></CraftifyCardDetails></PrivateRoutes>  ,
+                loader: () => fetch('https://craftify-creations-server.vercel.app/craftify'),
             },
+            {
+                path: '/my-cart',
+                element: <PrivateRoutes><MyArtCraftList></MyArtCraftList></PrivateRoutes>
+            },
+            {
+                path: '/all-items',
+                element:  <AllArtCraftItems></AllArtCraftItems>,
+                loader: () => fetch('https://craftify-creations-server.vercel.app/craftify')
+            },
+            {
+                path:"/my-cart/updateCraftify/:id",
+                element:<UpdateCraftify></UpdateCraftify>,
+                loader: ({params}) => fetch(`https://craftify-creations-server.vercel.app/singleCard/${params.id}`)
+              },
+              {
+                path: '/categories',
+                element:<CategoryIn></CategoryIn>,
+                
+              },
+              {
+                path: "category/:subcategory_Name",
+                element: <Subcategories></Subcategories>,
+                loader: () => fetch(`https://craftify-creations-server.vercel.app/craftify`)
 
-        ]
+              },
+               
+         ]
     }
  ])
 

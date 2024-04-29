@@ -1,17 +1,23 @@
 
 import { useContext } from 'react';
-import Swal from 'sweetalert2'
+// import Swal from 'sweetalert2'
 import { AuthContext } from '../../providers/AuthProvider';
 import { Helmet } from 'react-helmet-async';
-const AddCraftify = () => {
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
-    const {user}= useContext(AuthContext);
-    
 
-    const handleAddCraftify = event => {
+const UpdateCraftify = () => {
+
+    const { user } = useContext(AuthContext);
+    const craftify = useLoaderData();
+
+    const { _id, item_name, subcategory_Name, description, price, rating, customization, photo, processing_time, stockStatus } = craftify;
+
+    const handleUpdateCraftify = event => {
         event.preventDefault();
         const form = event.target;
-        const item_name= form.item_name.value;
+        const item_name = form.item_name.value;
         const subcategory_Name = form.subcategory_Name.value;
         const description = form.description.value;
         const price = form.price.value;
@@ -22,26 +28,26 @@ const AddCraftify = () => {
         const stockStatus = form.stockStatus.value;
         const email = user.email;
         const user_name = user.displayName;
-        
-        const newcraftify = { item_name, subcategory_Name, description, price, rating, customization, photo, processing_time, stockStatus, email, user_name };
-        console.log(newcraftify);
+
+        const updatedCraftify = { item_name, subcategory_Name, description, price, rating, customization, photo, processing_time, stockStatus, email, user_name };
+        console.log(updatedCraftify);
 
         // send data to the server 
-        fetch('https://craftify-creations-server.vercel.app/craftify', {
-            method: 'POST',
+        fetch(`https://craftify-creations-server.vercel.app/updateCard/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
 
-            body: JSON.stringify(newcraftify)
+            body: JSON.stringify(updatedCraftify)
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
+                if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
-                        text: 'User added successfully',
+                        text: 'craftify updated successfully',
                         icon: 'success',
                         confirmButtonText: 'Cool'
                     })
@@ -52,13 +58,13 @@ const AddCraftify = () => {
     }
 
     return (
-        <div className="bg-[#F4F3F0] p-20  text-pruple-500   dark:bg-gray-800 dark:text-white    ">
+        <div className="bg-[#F4F3F0] p-20  text-pruple-500   dark:bg-gray-800 dark:text-white">
             <Helmet>
-                <title>Craftify Creations || Add Craftify Page</title>
+                <title>Craftify Creations || Updated Craftify  </title>
             </Helmet>
-            <h1 className="text-3xl font-extrabold">Add Craftify</h1>
+            <h1 className="text-3xl font-extrabold">Updated Craftify : {item_name }</h1>
 
-            <form onSubmit={handleAddCraftify} >
+            <form onSubmit={handleUpdateCraftify} >
                 {/* form row  */}
                 <div className="md:flex mb-8 ">
                     <div className="form-control md:w-1/2">
@@ -68,7 +74,7 @@ const AddCraftify = () => {
                         <div className="join">
 
 
-                            <input className="input input-bordered join-item w-full" name="item_name" type="text" placeholder="  item_name" />
+                            <input className="input input-bordered join-item w-full" defaultValue={item_name} name="item_name" type="text" placeholder="  item_name" />
 
                         </div>
                     </div>
@@ -79,7 +85,7 @@ const AddCraftify = () => {
                         <div className="join">
 
 
-                            <input className="input input-bordered join-item w-full" name="subcategory_Name" type="text" placeholder="subcategory_Name " />
+                            <input className="input input-bordered join-item w-full" defaultValue={subcategory_Name} name="subcategory_Name" type="text" placeholder="subcategory_Name " />
 
                         </div>
                     </div>
@@ -93,7 +99,7 @@ const AddCraftify = () => {
                         <div className="join">
 
 
-                            <input className="input input-bordered join-item w-full" name="description" type="text" placeholder="short-description" />
+                            <input className="input input-bordered join-item w-full" defaultValue={description} name="description" type="text" placeholder="short-description" />
 
                         </div>
                     </div>
@@ -104,7 +110,7 @@ const AddCraftify = () => {
                         <div className="join">
 
 
-                            <input className="input input-bordered join-item w-full" name="price" type="text" placeholder="price" />
+                            <input className="input input-bordered join-item w-full" defaultValue={price} name="price" type="text" placeholder="price" />
 
                         </div>
                     </div>
@@ -116,7 +122,7 @@ const AddCraftify = () => {
                             <span>Rating</span>
                         </label>
                         <div className="join">
-                            <input className="input input-bordered join-item w-full" name="rating" type="text" placeholder="rating" />
+                            <input className="input input-bordered join-item w-full" defaultValue={rating} name="rating" type="text" placeholder="rating" />
 
                         </div>
                     </div>
@@ -125,7 +131,7 @@ const AddCraftify = () => {
                             <span>Customization</span>
                         </label>
                         <div className="join">
-                            <input className="input input-bordered join-item w-full" name="customization" type="text" placeholder="customization" />
+                            <input className="input input-bordered join-item w-full" defaultValue={customization} name="customization" type="text" placeholder="customization" />
 
                         </div>
                     </div>
@@ -137,7 +143,7 @@ const AddCraftify = () => {
                             <span>Processing Time</span>
                         </label>
                         <div className="join">
-                            <input className="input input-bordered join-item w-full" name="processing_time" type="text" placeholder="processing_time" />
+                            <input className="input input-bordered join-item w-full" defaultValue={processing_time} name="processing_time" type="text" placeholder="processing_time" />
 
                         </div>
                     </div>
@@ -146,7 +152,7 @@ const AddCraftify = () => {
                             <span>Stock Status</span>
                         </label>
                         <div className="join">
-                            <input className="input input-bordered join-item w-full" name="stockStatus" type="text" placeholder="stockStatus" />
+                            <input className="input input-bordered join-item w-full" defaultValue={stockStatus} name="stockStatus" type="text" placeholder="stockStatus" />
 
                         </div>
                     </div>
@@ -159,16 +165,17 @@ const AddCraftify = () => {
                         </label>
 
                         <div className="join">
-                            <input className="input input-bordered join-item w-full" name="photo" type="text" placeholder="Photo Url" />
+                            <input className="input input-bordered join-item w-full" defaultValue={photo} name="photo" type="text" placeholder="Photo Url" />
 
                         </div>
                     </div>
 
                 </div>
-                <input className="btn btn-block btn-secondary" type="submit" value="Add Craftify" />
+                <input className="btn btn-block btn-secondary" type="submit" value="Update Craftify" />
             </form>
         </div>
+
     );
 };
 
-export default AddCraftify;
+export default UpdateCraftify;
