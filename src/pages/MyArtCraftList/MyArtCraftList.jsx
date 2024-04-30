@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import { CiEdit } from "react-icons/ci";
 import { MdDelete } from "react-icons/md";
+import { Helmet } from "react-helmet-async";
 
 const MyArtCraftList = () => {
     const { user } = useContext(AuthContext);
@@ -90,6 +91,10 @@ const MyArtCraftList = () => {
 
     return (
         <div className="p-8 text-yellow-800 text-neon-lime mt-12 dark:bg-gray-800 dark:text-white font-bold font-playfair">
+
+            <Helmet>
+                <title>Craftify Creations || MyArtCraftList</title>
+            </Helmet>
             <h1 className="text-4xl font-bold mb-8">My Art & Craft List</h1>
             {/* Dropdown for filter */}
             <div className="mb-8 text-center">

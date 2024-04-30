@@ -15,14 +15,17 @@ Welcome to Craftify Creations, your destination for exploring the diverse world 
 
 
 ## Website Preview:
-
-![Craftify Creations Preview](https://i.postimg.cc/cJtfc4zG/craftify.png)
+ 
 
 <p float="left">
   <img src="https://i.postimg.cc/cJtfc4zG/craftify.png" width="200" />
-  <img src="https://i.postimg.cc/cJtfc4zG/craftify.png" width="200" /> 
-  <img src="https://i.postimg.cc/cJtfc4zG/craftify.png" width="200" />
+  <img src="https://i.postimg.cc/HsLzyHTd/web2.jpg" width="200" /> 
+  <img src="https://i.postimg.cc/k4cN2YZ2/web3.jpg" width="200" />
 </p>
+<p float="left">
+  <img src="https://i.postimg.cc/T13VgqMC/web4.jpg" width="200" />
+  <img src="https://i.postimg.cc/1RvcPTwT/web5.jpg" width="200" /> 
+  <img src="https://i.postimg.cc/0jXpfM9x/web6.jpg" width="200" />  
 
 ## Painting and Drawing:
 

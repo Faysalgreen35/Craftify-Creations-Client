@@ -1,5 +1,6 @@
 
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllArtCraftItems = () => {
@@ -26,6 +27,9 @@ const AllArtCraftItems = () => {
 
     return (
         <div className="container mx-auto py-8">
+             <Helmet>
+                <title>Craftify Creations || AllArtCraftItems</title>
+            </Helmet>
             <h1 className="text-4xl font-bold mb-8  text-yellow-950 dark:text-white">All Art & Craft Items</h1>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300 bg-white dark:bg-gray-800">
