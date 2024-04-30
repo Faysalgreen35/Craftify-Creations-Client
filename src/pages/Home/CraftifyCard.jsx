@@ -26,7 +26,7 @@ const CraftifyCard = ({ singleCard }) => {
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden">
       <div className="relative">
-        <div className="image-container overflow-hidden transform transition-transform hover:scale-110">
+        <div className="image-container overflow-hidden transform transition-transform hover:scale-150">
           <img src={photo} alt={item_name} className="h-64 w-full object-cover object-center" />
         </div>
         <div className="absolute top-0 left-0 bg-blue-500 text-white font-playfair px-5 py-3 rounded-tl-lg">

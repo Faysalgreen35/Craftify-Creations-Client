@@ -2,10 +2,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/bundle';
 import { FreeMode, Navigation, Autoplay, Pagination } from 'swiper/modules';
-
+import { useEffect } from 'react';
+ 
+import AOS from 'aos';
+import 'aos/dist/aos.css';  
 const Banner = () => {
+
+    //aos use
+    useEffect(() => {
+    AOS.init({
+            duration: 1000, // Set the duration for the animation
+            once: true, // Set to true if you want the animation to occur only once
+        });
+    }, []);
     return (
-        <div className='md:max-w-6xl  lg:mt-12  '>
+        <div data-aos="flip-right" className='md:max-w-6xl  lg:mt-12  '>
             <Swiper
                 style={{
                     '--swiper-navigation-color': 'white',

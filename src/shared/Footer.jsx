@@ -38,9 +38,9 @@ const Footer = () => {
                             <label className="label">
                                 <span className="label-text text-white">Enter your email address</span>
                             </label>
-                            <div className="join">
-                                <input type="text" placeholder="username@site.com" className="input text-white input-bordered join-item" />
-                                <button className="btn btn-secondary  join-item">Subscribe</button>
+                            <div className="join flex flex-col lg:flex-row text-sm">
+                                <input type="text" placeholder="username@site.com" className="input text-white input-bordered join-item mr-14 lg:mr-0" />
+                                <button className="btn bg-[#916211] border-0 text-white mr-32 lg:mr-1 join-item">Subscribe</button>
                             </div>
                         </fieldset>
                     </form>

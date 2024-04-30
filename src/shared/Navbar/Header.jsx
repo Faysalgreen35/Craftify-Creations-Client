@@ -69,27 +69,25 @@ const Header = () => {
 
     </>
     return (
-        // <div className="navbar text-yellow-700 text-neon-lime mt-12  my-24  dark:bg-gray-800 dark:text-white   bg-orange-400  py-16 font-bold font-playfair   p-4">
-
-        // <div className={`navbar text-yellow-700 text-neon-lime   dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
+         
 <div className={`navbar text-yellow-700 text-neon-lime dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50 max-w-6xl mx-auto ' : ''}`}>
     
             <div className="navbar-start">
-                <div className="  dropdown ">
+                <div className="  dropdown dark:text-white dark:bg-gray-600 ">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
-                    <ul tabIndex={0} className="menu menu-sm text-4xl dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-sm text-4xl dropdown-content mt-3 z-[1] p-2 shadow dark:text-white dark:bg-gray-600  bg-base-100 rounded-box w-52">
                         {navlinks}
                     </ul>
                 </div>
                 <div className="flex">
                     {/* <img className="w-10" src={Logo} alt="" /> */}
-                    <a className="btn btn-ghost lg:text-4xl font-jacquard   lg:block"> Craftify Creations</a>
+                    <a className="btn btn-ghost lg:text-4xl font-jacquard  mr-2 lg:mr-0 lg:block"> Craftify Creations</a>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal   px-1">
+                <ul className="menu menu-horizontal ml-3  px-1">
                     {navlinks}
                 </ul>
             </div>
@@ -120,7 +118,7 @@ const Header = () => {
                         </div>
 
                         :
-                        <div className="flex text-sm lg:text-2xl" >
+                        <div className="flex text-sm lg:text-xl gap-2"  >
                             <Link to="login"><button className="btn btn-primary">Login</button></Link>
                             <Link to="register">   <button className="btn btn-primary">Register</button></Link>
 
@@ -130,13 +128,13 @@ const Header = () => {
 
 
             </div>
-            <div>
+            <div className=" mr-2 lg:mr-1 ml-2 lg:ml-2 border-4 rounded-full p-2  border-[#916211] ">
                 <label className="swap swap-rotate">
 
                     {/* this hidden checkbox controls the state */}
                     <input id="theme-toggle"
                         type="checkbox"
-                        className="hidden toggle theme-controller bg-amber-300 border-sky-400"
+                        className="hidden toggle theme-controller  bg-amber-300 border-sky-400"
                         checked={darkMode}
                         onChange={handleThemeToggle} />
 

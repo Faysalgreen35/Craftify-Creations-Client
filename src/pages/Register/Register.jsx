@@ -115,7 +115,7 @@ const Register = () => {
                             </div>
                             <div className="flex w-full">
                                 <input type={showPassword ? "text" : "password"} placeholder="Password" name="password" className="input input-bordered md:px-16" {...register("password", { required: true })}/>
-                                <span className="text-2xl mt-4 -translate-x-7 " onClick={() => setShowPassword(!showPassword)}> {!showPassword ? <FaEye /> : <IoIosEyeOff />}</span>
+                                <span className="text-2xl text-black dark:text-black mt-4 -translate-x-7 " onClick={() => setShowPassword(!showPassword)}> {!showPassword ? <FaEye /> : <IoIosEyeOff />}</span>
                             </div>
                             {succsess && <p className="ml-12 text-center text-success mt-4 mb-3">{succsess}</p>}
                             {registerError && <p className="ml-12 text-center text-red-400 mt-2 mb-2">{registerError}</p>}

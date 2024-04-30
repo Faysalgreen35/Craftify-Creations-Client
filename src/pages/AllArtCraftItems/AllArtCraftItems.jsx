@@ -2,20 +2,22 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData } from "react-router-dom";
+  
 
 const AllArtCraftItems = () => {
     const craftify = useLoaderData();
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+       
         // Simulating data loading delay (You can replace this with your actual data loading logic)
         const timeout = setTimeout(() => {
             setLoading(false); // Set loading to false once data is loaded
-        }, 2000); // Simulating 2 seconds loading delay
-        
+        }, 1000); // Simulating 2 seconds loading delay
+       
         // Cleanup function to clear timeout
         return () => clearTimeout(timeout);
-    }, []); // Run this effect only once after component mount
+    }, []);  
 
     if (loading) {
         return  <div className="w-full text-center  "><span className="loading loading-bars loading-xs"></span>
@@ -23,10 +25,11 @@ const AllArtCraftItems = () => {
         <span className="loading loading-bars loading-md"></span>
         <span className="loading loading-bars loading-lg"></span></div>;
     }
+    
 
 
     return (
-        <div className="container mx-auto py-8">
+        <div   className="container mx-auto py-8">
              <Helmet>
                 <title>Craftify Creations || AllArtCraftItems</title>
             </Helmet>
@@ -45,14 +48,14 @@ const AllArtCraftItems = () => {
                     <tbody>
                         { craftify.map(cra => (
                             <tr key={cra._id} className="bg-gray-100 dark:bg-gray-600">
-                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600"><img src={cra.photo} className="w-20 h-20" alt="" /></td>
+                                <td className="px-4 py-2 border border-gray-300 dark:border-gray-600"><img src={cra.photo} className="w-20 lg:w-40 h-20 lg:h-40" alt="" /></td>
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">{cra.subcategory_Name}</td>
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600  ">{cra.email}</td>
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600 hidden md:table-cell">{cra.user_name}</td>
                                 <td className="px-4 py-2 border border-gray-300 dark:border-gray-600">
 
                                     <Link to={`/craftify/${cra._id}`} className="block mt-4">
-                                        <button className="bg-[#e6bf55] hover:bg-blue-700 text-white font-semibold py-2 px-4 w-full rounded-full">
+                                        <button className="bg-[#916211]   hover:bg-blue-700 text-white font-semibold py-2 px-4 w-full rounded-full">
                                             View Details
                                         </button>
                                     </Link>
