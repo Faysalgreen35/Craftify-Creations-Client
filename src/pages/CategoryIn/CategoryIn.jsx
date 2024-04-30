@@ -50,12 +50,12 @@ const CategoryIn = () => {
                         <div className="join">
                             <select className="input input-bordered join-item w-full" value={subcategory_Name} onChange={e => setSubcategory(e.target.value)}>
                                 <option value="">Choose a subcategory</option>
-                                <option value="Landscape Painting">Landscape Painting</option>
-                                <option value="Portrait Drawing">Portrait Drawing:</option>
-                                <option value="Watercolour Painting">Watercolour Painting</option>
-                                <option value="Oil Painting">Oil Painting</option>
-                                <option value="Charcoal Sketching">Charcoal Sketching</option>
-                                <option value="Cartoon Drawing Drawing">Cartoon  Drawing</option>
+                                <option value="Landscape_Painting">Landscape Painting</option>
+                                <option value="Portrait_Drawing">Portrait Drawing:</option>
+                                <option value="Watercolour_Painting">Watercolour Painting</option>
+                                <option value="Oil_Painting">Oil Painting</option>
+                                <option value="Charcoal_Sketching">Charcoal Sketching</option>
+                                <option value="Cartoon_Drawing">Cartoon  Drawing</option>
                                 {/* Add other subcategory options */}
                             </select>
                         </div>

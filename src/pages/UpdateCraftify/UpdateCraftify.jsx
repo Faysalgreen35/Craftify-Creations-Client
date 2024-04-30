@@ -21,7 +21,8 @@ const UpdateCraftify = () => {
         const subcategory_Name = form.subcategory_Name.value;
         const description = form.description.value;
         const price = form.price.value;
-        const rating = form.rating.value;
+        // const rating = form.rating.value;
+        const rating = parseFloat(form.rating.value);
         const customization = form.customization.value;
         const photo = form.photo.value;
         const processing_time = form.processing_time.value;

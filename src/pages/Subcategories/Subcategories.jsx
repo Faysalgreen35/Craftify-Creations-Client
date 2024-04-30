@@ -18,7 +18,7 @@ const Subcategories = () => {
                         {/* Left side - Image */}
                         <div className="w-1/3">
                             <img
-                                className="object-cover w-full h-full"
+                                className="object-cover w-40 h-full"
                                 src={craft.photo}
                                 alt={craft.item_name}
                             />
@@ -27,7 +27,7 @@ const Subcategories = () => {
                         <div className="w-2/3 p-4">
                             <div className="font-bold text-xl mb-2">{craft.item_name}</div>
                             <p className="text-gray-700 text-base mb-2">
-                                Subcategory: {craft.subcategory_Name}
+                              <span className="font-bold">  Subcategory: </span>{craft.subcategory_Name}
                             </p>
                             <p className="text-gray-700 text-base mb-2">
                                 Description: {craft.description}

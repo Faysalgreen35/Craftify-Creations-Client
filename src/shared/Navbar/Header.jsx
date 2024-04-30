@@ -11,19 +11,37 @@ const Header = () => {
 
     const [darkMode, setDarkMode] = useState(false);
 
+    // const [isScrolled, setIsScrolled] = useState(false);
+
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         const scrollTop = window.scrollY;
+    //         if (scrollTop > 100) { // Adjust the scroll threshold as needed
+    //             setIsScrolled(true);
+    //         } else {
+    //             setIsScrolled(false);
+    //         }
+    //     };
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            if (scrollTop > 100) { // Adjust the scroll threshold as needed
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+      const handleScroll = () => {
+        if (window.scrollY > 1200) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      // Clean up the event listener
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
     }, []);
 
     const handleThemeToggle = () => {
@@ -53,8 +71,9 @@ const Header = () => {
     return (
         // <div className="navbar text-yellow-700 text-neon-lime mt-12  my-24  dark:bg-gray-800 dark:text-white   bg-orange-400  py-16 font-bold font-playfair   p-4">
 
-        <div className={`navbar text-yellow-700 text-neon-lime   dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
-
+        // <div className={`navbar text-yellow-700 text-neon-lime   dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50' : ''}`}>
+<div className={`navbar text-yellow-700 text-neon-lime dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50 max-w-6xl mx-auto ' : ''}`}>
+    
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
