@@ -75,7 +75,7 @@ const Header = () => {
 <div className={`navbar text-yellow-700 text-neon-lime dark:bg-gray-800 dark:text-white bg-[#FAF3E8] py-10 font-bold font-playfair p-4 ${isScrolled ? 'fixed top-0 left-0 right-0 z-50 max-w-6xl mx-auto ' : ''}`}>
     
             <div className="navbar-start">
-                <div className="dropdown">
+                <div className="  dropdown ">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
@@ -99,13 +99,13 @@ const Header = () => {
                     user ?
                         <div className="  flex">
 
-                            <div className="  dropdown  dropdown-hover">
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="  dropdown  dropdown-left  dropdown-hover">
+                                <div tabIndex={0} role="button" className="btn btn-ghost  btn-circle avatar">
                                     <div className="w-10 rounded-full">
                                         <img alt="Tailwind CSS Navbar component" src={user.photoURL} />
                                     </div>
                                 </div>
-                                <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52  ">
+                                <ul tabIndex={0} className="mt-9 z-[1] p-2 shadow menu menu-sm dropdown-content  bg-base-100 rounded-box w-52  ">
                                     <li>
 
                                     </li>
@@ -120,7 +120,7 @@ const Header = () => {
                         </div>
 
                         :
-                        <div  >
+                        <div className="flex text-sm lg:text-2xl" >
                             <Link to="login"><button className="btn btn-primary">Login</button></Link>
                             <Link to="register">   <button className="btn btn-primary">Register</button></Link>
 

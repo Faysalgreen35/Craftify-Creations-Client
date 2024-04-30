@@ -1,4 +1,3 @@
-
 import { useContext, useState } from 'react';
 import Swal from 'sweetalert2'
 import { AuthContext } from '../../providers/AuthProvider';
@@ -69,7 +68,6 @@ const AddCraftify = () => {
                             <span>Item Name</span>
                         </label>
                         <div className="join">
-
 
                             <input className="input input-bordered join-item w-full" name="item_name" type="text" placeholder="  item_name" />
 
