@@ -75,7 +75,7 @@ const Register = () => {
     return (
         <div>
               <ToastContainer />
-            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)' }}>
+            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url(https://i.ibb.co/mG6jkSZ/banner.jpg)' }}>
                 <Helmet>
                     <title>Craftify Creations | Register Page</title>
                 </Helmet>

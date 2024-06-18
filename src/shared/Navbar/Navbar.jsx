@@ -54,13 +54,7 @@ const Navbar = () => {
                     >
                         Login
                     </NavLink>
-                    <NavLink
-                        to="/register"
-                        className="text-white hover:text-gray-300"
-                        activeClassName="font-bold"
-                    >
-                        Register
-                    </NavLink>
+                    
                 </div>
                 
                 <div>

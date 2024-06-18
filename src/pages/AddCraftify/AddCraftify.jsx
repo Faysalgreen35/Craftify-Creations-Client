@@ -147,11 +147,17 @@ const AddCraftify = () => {
                             <span>Customization</span>
                         </label>
                         <div className="join"> 
-                        <select id="customizationFilter" value={customization} onChange={event => setCustomization(event.target.value)}    className="border join w-full border-gray-300 rounded px-4 py-3  text-neon-lime  dark:bg-gray-800 dark:text-white font-bold font-playfair ">
+                        {/* <select id="customizationFilter" value={customization} onChange={event => setCustomization(event.target.value)}    className="border join w-full border-gray-300 rounded px-4 py-3  text-neon-lime  dark:bg-gray-800 dark:text-white font-bold font-playfair ">
                    
                     <option className='py-4 text-3xl' value="yes">Yes</option>
                     <option className='py-4 text-3xl' value="no">No</option>
-                     </select>
+                     </select> */}
+                      <select id="customizationFilter" value={customization} onChange={event =>   setCustomization(event.target.value)}    className="border join w-full border-gray-300 rounded px-4 py-3  text-neon-lime  dark:bg-gray-800 dark:text-white font-bold font-playfair ">
+                      <option className='py-3 text-3xl' value="">Choose customization</option>
+                   
+                   <option className='py-4 text-2xl' value="Yes">Yes</option>
+                   <option className='py-4 text-2xl' value="No"> No</option>
+                    </select>
                        </div>
                    
                      </div>
@@ -176,9 +182,11 @@ const AddCraftify = () => {
 
                            
                         <select id="customizationFilter" value={stockStatus} onChange={event => setStockStatus(event.target.value)}    className="border join w-full border-gray-300 rounded px-4 py-3  text-neon-lime  dark:bg-gray-800 dark:text-white font-bold font-playfair ">
+                        
+                        <option className='py-3 text-3xl' value="">Choose stockStatus</option>
                    
-                    <option className='py-4 text-2xl' value="yes">In Stock</option>
-                    <option className='py-4 text-2xl' value="no"> Out of Stock: Made to Order</option>
+                    <option className='py-4 text-2xl' value="In Stock">In Stock</option>
+                    <option className='py-4 text-2xl' value="Made to Order"> Out of Stock: Made to Order</option>
                      </select>
                         
 

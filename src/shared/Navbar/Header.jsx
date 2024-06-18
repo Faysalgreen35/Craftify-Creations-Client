@@ -120,9 +120,7 @@ const Header = () => {
                         :
                         <div className="flex text-sm lg:text-xl gap-2"  >
                             <Link to="login"><button className="btn btn-primary">Login</button></Link>
-                            <Link to="register">   <button className="btn btn-primary">Register</button></Link>
-
-                        </div>
+                                    </div>
 
                 }
 

@@ -66,11 +66,11 @@ const Login = () => {
                 <title>Craftify Creations| Login Page</title>
             </Helmet>
             <ToastContainer />
-            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url(https://shorturl.at/bdBLW)' }}>
+            <div className="hero min-h-screen bg-base-200" style={{ backgroundImage: 'url(https://i.ibb.co/mG6jkSZ/banner.jpg)' }}>
                 <div className="hero-content flex-col  hero-overlay bg-opacity-30">
-                    <h1 className="text-5xl text-white font-bold px-64 "> Please Login </h1>
+                    <h1 className="text-5xl text-white font-bold lg:px-64 "> Please Login </h1>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body px-4">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body px-4 dark:bg-gray-700 dark:text-white">
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>

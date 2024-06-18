@@ -43,7 +43,7 @@ const CraftifyCardDetails = () => {
                     <p className=" text-left    font-playfair font-bold">stockStatus: {CraftifyDetails?.stockStatus}</p>
                     <p className=" text-left    font-playfair font-bold">Description: {CraftifyDetails?.description}</p>
                     <p className=" text-left    font-playfair font-bold">Customization: {CraftifyDetails?.customization}</p>
-                    <p className=" text-left    font-playfair font-bold">Processin Time: {CraftifyDetails?.processing_time}</p>
+                    <p className=" text-left    font-playfair font-bold">Processin Time: {CraftifyDetails?.processing_time} <span>Days</span></p>
                     {/* <p className=" text-left    font-playfair font-bold">Rating  : {CraftifyDetails?.rating}</p>
                      */}
 
